@@ -9,12 +9,7 @@
 	<description>实例</description>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.10.5</version>
-		</dependency>
+
 
 	</dependencies>
 
