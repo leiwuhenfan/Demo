@@ -1,10 +1,16 @@
 package ink.zhongshao;
 
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Test {
 
+	
+	private static Random random = ThreadLocalRandom.current();
+	
+	
 	public static void main(String[] args) {
 		System.out.println("0000000000000==");
 
@@ -29,6 +35,8 @@ public class Test {
 		System.out.println("acloSets.add(\"1\")" + acloSets.add("1"));
 		System.out.println("acloSets.add(\"2\")" + acloSets.add("2"));
 
+		System.out.println("nextInt(10)="+random.nextInt(10));
+		
 	}
 
 }
