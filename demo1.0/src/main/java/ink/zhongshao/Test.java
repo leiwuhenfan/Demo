@@ -1,6 +1,8 @@
 package ink.zhongshao;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
@@ -15,7 +17,6 @@ public class Test {
 		System.out.println("0000000000000==");
 
 		// 替换
-
 		String kl = "\\";
 
 		// 斜杠替换，4个\替换(模糊查询使用like ? escape '/' %name%)
@@ -38,17 +39,39 @@ public class Test {
 		System.out.println("nextInt(10)="+random.nextInt(10));
 		
 		
-		
-		
-		
 		String[]  jk= acloSets.toArray(new String[0]);
 		System.out.println(jk);
 		
 		
+		Test t = new Test();
+		
+		t.TestArraytoList();
+		t.testListtoArray();
 		
 	}
 	
-	void testList() {
+	
+	void TestArraytoList() {
+		/*
+		【强制】使用工具类 Arrays.asList()把数组转换成集合时，不能使用其修改集合相关的方法，它的 add/remove/clear 方法会抛出 UnsupportedOperationException 异常。
+		说明：asList 的返回对象是一个 Arrays 内部类，并没有实现集合的修改方法。Arrays.asList 体现的是适配器模式，只是转换接口，后台的数据仍是数组。
+		 String[] str = new String[] { "chen", "yang", "hao" };
+		 List list = Arrays.asList(str);
+		第一种情况：list.add("yangguanbao"); 运行时异常。
+		第二种情况：str[0] = "change"; 也会随之修改，反之亦然。
+		*/
+		
+		String []dd = {"11","22","33"};
+		
+		List<String> lk = Arrays.asList(dd);
+		
+		dd[0]="11-gh";
+		
+		System.out.println(String.join(",", lk));
+		
+	}
+	
+	void testListtoArray() {
 		
 		/*
 		【强制】使用集合转数组的方法，必须使用集合的 toArray(T[] array)，传入的是类型完全一致、长度为 0 的空数组。
@@ -72,11 +95,7 @@ public class Test {
 		System.out.println("acloSets.add(\"1\")" + acloSets.add("1"));
 		System.out.println("acloSets.add(\"2\")" + acloSets.add("2"));
 		String[]  jk= acloSets.toArray(new String[0]);
-		System.out.println(jk);
-		
-		
-		
-		
+		System.out.println(String.join(",", jk));
 		
 		
 	}
