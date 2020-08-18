@@ -10,14 +10,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author zs
- * @date 2020Äê8ÔÂ17ÈÕ
+ * @date 2020å¹´8æœˆ17æ—¥
  */
 public class MyThreadJob2 implements Callable<String> {
 	private AtomicInteger atmicInteger = new AtomicInteger(0);
 
 	@Override
 	public String call() throws Exception {
-		System.out.println("Ö´ÐÐ===" + Thread.currentThread().getName());
+		System.out.println("æ‰§è¡Œ==" + Thread.currentThread().getName());
 
 		Random r = new Random();
 		for (int i = 0; i < 100; i++) {

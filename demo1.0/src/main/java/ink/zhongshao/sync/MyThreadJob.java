@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author zs
- * @date 2020Äê8ÔÂ17ÈÕ
+ * @date 2020å¹´8æœˆ17æ—¥
  */
 public class MyThreadJob implements Callable<String> {
 	private Lock lock = new ReentrantLock();
@@ -20,7 +20,7 @@ public class MyThreadJob implements Callable<String> {
 
 	@Override
 	public String call() throws Exception {
-		System.out.println("Ö´ÐÐ===" + Thread.currentThread().getName() );
+		System.out.println("æ‰§è¡Œ=" + Thread.currentThread().getName() );
 		lock.lock();
 		try {
 			Random r = new Random();
