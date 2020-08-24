@@ -1,5 +1,7 @@
 package ink.zhongshao.quartz;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.quartz.Job;
@@ -17,9 +19,11 @@ public class HelloJob implements Job {
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 
-		System.out.println("当前执时间=" + new Date());
-
-		System.out.println("下次执行时间=" + context.getNextFireTime());
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String startDate = df.format(new Date());
+		System.out.println("当前执时间=" + startDate);
+		String nextDate = df.format(context.getNextFireTime());
+		System.out.println("下次执行时间=" + nextDate);
 	}
 
 }
