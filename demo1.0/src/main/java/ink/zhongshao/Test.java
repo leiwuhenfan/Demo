@@ -16,6 +16,7 @@ public class Test {
 		hk.add(4);
 		hk.add(5);
 
+		//大于2的记录
 		List<Integer> newhk = hk.stream().filter((i) -> i > 2).collect(Collectors.toList());
 
 		newhk.stream().forEach(System.out::println);
