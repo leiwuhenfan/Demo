@@ -5,10 +5,14 @@ package ink.zhongshao;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -39,12 +43,53 @@ public class ListArrayMap {
 		t.TestArraytoList();
 		t.testListtoArray();
 		
-		
 		t.concurrentMap();
+		
+		
+		t.sortList();
 		
 
 	}
 	
+	/**
+	 * map的排序
+	 */
+	void sormap() {
+		
+		//无顺序
+		Map<String,String> hashMap = new HashMap<>();
+		//自然排序
+		Map<String,String> treeMap = new TreeMap<>();
+		//按照进入map顺序排序
+		Map<String,String> linkedHashMap = new LinkedHashMap<>();
+		
+		//实现比较器,自定义排序
+		//Comparator<T>
+		
+		
+	}
+	
+	
+	void sortList(){
+		
+		List<Wangfan> lists= new ArrayList<Wangfan>();
+		
+		lists.add(new Wangfan(3L, "3"));
+		lists.add(new Wangfan(1L, "1"));
+		lists.add(new Wangfan(2L, "3"));
+		
+		
+//		List<Employee> sortedEmp = employees.stream().sorted(Comparator.comparing(Employee::getSalary)).collect(Collectors.toList());
+//		sortedEmp.stream().forEach(System.out::println);
+		//按照年龄升序
+		lists = lists.stream().sorted(Comparator.comparing(Wangfan::getAge)).collect(Collectors.toList());
+		System.out.println(lists);
+		
+		//按照年龄降序
+		lists = lists.stream().sorted(Comparator.comparing(Wangfan::getAge).reversed()).collect(Collectors.toList());
+		System.out.println(lists);
+		
+	}
 	
 	void concurrentMap() {
 		
@@ -64,13 +109,6 @@ public class ListArrayMap {
 		
 		System.out.println(obj);
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	void TestArraytoList() {
 		/*
@@ -196,6 +234,7 @@ public class ListArrayMap {
 }
 
 class Wangfan {
+	
 	private Long age;
 	private String name;
 
@@ -219,6 +258,11 @@ class Wangfan {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Wangfan [age=" + age + ", name=" + name + "]";
 	}
 
 }
