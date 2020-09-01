@@ -45,11 +45,28 @@ public class ListArrayMap {
 		
 		t.concurrentMap();
 		
-		
 		t.sortList();
 		
+		
+		t.testListStringtoLong();
 
 	}
+	
+	
+	
+	
+	
+	void testListStringtoLong(){
+		
+		List<String> ids = new ArrayList<>();
+		ids.add("1");
+		ids.add("2");
+		ids.add("1");
+		
+		ids.stream().distinct().map(s -> Long.parseLong(s)).collect(Collectors.toList()).forEach(System.out::println);
+		
+	}
+	
 	
 	/**
 	 * map的排序
