@@ -49,11 +49,36 @@ public class ListArrayMap {
 		
 		
 		t.testListStringtoLong();
+		
+		t.testListObjtoMap();
 
 	}
 	
 	
-	
+void testListObjtoMap(){
+		
+		List<Wangfan> ids = new ArrayList<>();
+		
+		ids.add(new Wangfan(12L, "12name"));
+		ids.add(new Wangfan(11L, "11name"));
+		ids.add(new Wangfan(10L, "10name"));
+		ids.add(new Wangfan(100L, "10name"));
+		
+		/* Map<String,Wangfan> map = */ ids.stream().collect(
+				Collectors.toMap(
+						
+						Wangfan::getName, 
+						wf->{return wf;},
+						(oldValue, newValue) -> newValue,  //替换原来的值
+						LinkedHashMap::new
+						))
+				.forEach((key,value) -> {
+					
+					System.out.println(key +"   "   + value);
+					
+				});
+		
+	}
 	
 	
 	void testListStringtoLong(){
