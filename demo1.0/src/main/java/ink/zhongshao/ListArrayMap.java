@@ -47,10 +47,11 @@ public class ListArrayMap {
 		
 		t.sortList();
 		
-		
 		t.testListStringtoLong();
 		
 		t.testListObjtoMap();
+		
+		t.Intersection();
 
 	}
 	
@@ -202,6 +203,42 @@ void testListObjtoMap(){
 	}
 	
 
+	/**
+	 * 处理对象集合中交集  差集
+	 */
+	public void Intersection() {
+		
+		List<Wangfan> wfs1 = new ArrayList<>();
+
+		wfs1.add(new Wangfan(1L,"wf1"));
+		wfs1.add(new Wangfan(2L,"wf2"));
+		
+		List<Wangfan> wfs2 = new ArrayList<>();
+
+		wfs2.add(new Wangfan(1L,"wf1"));
+		wfs2.add(new Wangfan(4L,"wf4"));
+		
+		
+		//名字相同就交集
+		List<Wangfan> intersection = wfs1.stream().filter(item -> {
+			
+			return wfs2.stream().map(Wangfan::getName).collect(Collectors.toList()).contains(item.getName());
+			
+		}).collect(Collectors.toList());
+		
+		intersection.parallelStream().forEach(System.out::println);
+		
+		//差集wfs1
+		List<Wangfan> sub = wfs1.stream().filter(item ->  {
+			return !intersection.stream().map(Wangfan::getName).collect(Collectors.toList()).contains(item.getName());
+		}).collect(Collectors.toList());
+		sub.parallelStream().forEach(System.out::println);
+		
+		
+		//
+		
+		
+	}
 
 	// list<对象> --- >list<String>
 		public void getlistfor() {
