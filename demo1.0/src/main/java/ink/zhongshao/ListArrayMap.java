@@ -9,6 +9,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -53,9 +54,45 @@ public class ListArrayMap {
 		
 		t.Intersection();
 
+		t.addfirstList();
+		
 	}
 	
 	
+	
+	
+	
+/**将元素添加到list的第一位
+	 * 
+	 */
+	private void addfirstList() {
+		
+		List<String> list = new ArrayList<>();
+		
+		list.add("1");
+		list.add("2");
+		list.add(0,"0");
+		list.add(0,"9");
+		
+		list.stream().forEach(System.out::println);
+		
+		System.out.println("-----------------------");
+		
+		LinkedList<String> linkedList = new LinkedList<>();
+		linkedList.add("2");
+		linkedList.add("3");
+		linkedList.add("4");
+		linkedList.addFirst("1");
+		linkedList.addFirst("11");
+		linkedList.stream().forEach(System.out::println);
+		
+		
+	}
+
+
+
+
+
 void testListObjtoMap(){
 		
 		List<Wangfan> ids = new ArrayList<>();
