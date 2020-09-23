@@ -18,9 +18,9 @@ public class MyJob implements Callable<String> {
 		System.out.println("Ö´ÐÐÈÎÎñ:" + jobName);
 
 		if (jobName.equals("MyJob3")) {
-			TimeUnit.SECONDS.sleep(5);
+			TimeUnit.SECONDS.sleep(50000);
 		} else {
-			TimeUnit.SECONDS.sleep(2);
+			TimeUnit.SECONDS.sleep(200000);
 		}
 
 		return jobName;

@@ -42,7 +42,35 @@ public class LockMe {
 
 		RejectedExecutionHandler handler = new ThreadPoolExecutor.AbortPolicy();
 
-		ThreadPoolExecutor threadPool = new ThreadPoolExecutor(10, 12, 2, TimeUnit.SECONDS, workQueue, threadFactory, handler);
+		
+		/**
+		 * 1.先看下机器的CPU核数，然后在设定具体参数：
+
+			System.out.println(Runtime.getRuntime().availableProcessors());
+			
+			即CPU核数 = Runtime.getRuntime().availableProcessors()
+			
+			2.分析下线程池处理的程序是CPU密集型，还是IO密集型
+			
+			CPU密集型：核心线程数 = CPU核数 + 1
+			
+			IO密集型：核心线程数 = CPU核数 * 2
+			
+			注：IO密集型（某大厂实践经验）
+			
+			       核心线程数 = CPU核数 / （1-阻塞系数）     例如阻塞系数 0.8，CPU核数为4
+			
+			       则核心线程数为20
+			
+			面试时答上面的就可以，如果面试官继续追问，则说下备注里面我们的实践经验是xxxx
+			
+			具体程序是CPU密集型，还是IO密集型请参考这篇文章：
+			
+			https://blog.csdn.net/youanyyou/article/details/78990156
+		 */
+		
+		
+		ThreadPoolExecutor threadPool = new ThreadPoolExecutor(4, 12, 2, TimeUnit.SECONDS, workQueue, threadFactory, handler);
 
 		MyThreadJob myThreadJob = new MyThreadJob();
 		
