@@ -5,6 +5,7 @@ package ink.zhongshao;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -27,6 +28,16 @@ public class ListArrayMap {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		List<String> lists  =Collections.EMPTY_LIST,
+				lists2=Collections.emptyList();//——返回只读空集合
+		//以下操作会报错
+		//lists.add("sss");
+		
+		
+		System.out.println("ddd"+String.join(",", lists));
+		
+		
 		List<Integer> hk = new ArrayList<>();
 		hk.add(1);
 		hk.add(2);
