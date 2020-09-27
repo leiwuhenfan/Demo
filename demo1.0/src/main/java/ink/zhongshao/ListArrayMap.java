@@ -59,13 +59,14 @@ public class ListArrayMap {
 		
 		t.sortList();
 		
-		t.testListStringtoLong();
-		
 		t.testListObjtoMap();
 		
 		t.Intersection();
 
 		t.addfirstList();
+		
+		
+		t.testListStringtoLong();
 		
 	}
 	
@@ -175,6 +176,8 @@ void testListObjtoMap(){
 		ids.add("1");
 		
 		ids.stream().distinct().map(s -> Long.parseLong(s)).collect(Collectors.toList()).forEach(System.out::println);
+		
+		ids.stream().map(s -> Long.parseLong(s)).sorted().collect(Collectors.toList()).forEach(System.out::print);
 		
 	}
 	
