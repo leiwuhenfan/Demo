@@ -29,13 +29,13 @@ public class ListArrayMap {
 	 */
 	public static void main(String[] args) {
 		
-		List<String> lists  =Collections.EMPTY_LIST,
-				lists2=Collections.emptyList();//——返回只读空集合
+//		List<String> lists  = Collections.EMPTY_LIST;
+		List<String> emptyList=Collections.emptyList();//——返回只读空集合
 		//以下操作会报错
-		//lists.add("sss");
+		//emptyList.add("sss");
 		
 		
-		System.out.println("ddd"+String.join(",", lists));
+		System.out.println("ddd"+String.join(",", emptyList));
 		
 		
 		List<Integer> hk = new ArrayList<>();
@@ -196,7 +196,7 @@ void testListObjtoMap(){
 		
 		//实现比较器,自定义排序
 		//Comparator<T>
-		
+		System.out.println( hashMap +" " + treeMap +" " + linkedHashMap);
 		
 	}
 	
