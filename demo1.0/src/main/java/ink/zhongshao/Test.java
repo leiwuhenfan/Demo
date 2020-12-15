@@ -1,10 +1,20 @@
 package ink.zhongshao;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * 设置的运行参数
+ * -Xmx2M -Xmx2M -XX:MetaspaceSize=10M -XX:MaxMetaspaceSize=10M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=D:\study\01test\OOM\
+ * 
+ * @author zs
+ * @date 2020年12月15日
+ */
 public class Test {
 
 	private static Random random = ThreadLocalRandom.current();
@@ -34,6 +44,12 @@ public class Test {
 
 		String[] jk = acloSets.toArray(new String[0]);
 		System.out.println(jk);
+		
+		List<String> testOOM = new ArrayList<>();
+		for(;;) {
+			testOOM.add(UUID.randomUUID().toString());
+		}
+		
 
 	}
 
