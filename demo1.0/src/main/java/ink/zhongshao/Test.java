@@ -20,6 +20,22 @@ public class Test {
 	private static Random random = ThreadLocalRandom.current();
 
 	public static void main(String[] args) {
+		
+		StringBuilder jksss = new StringBuilder("123456");
+		
+		
+		jksss.replace(0, 2, "VV");
+		
+		
+		System.out.println(jksss);
+		
+		
+		
+		
+		
+		
+		
+		
 		// 替换
 		String kl = "\\";
 
