@@ -257,6 +257,8 @@ void testListObjtoMap(){
 		
 		dd[0]="11-gh";
 		
+		System.out.println("====="+lk.contains("11"));
+		
 		System.out.println(String.join(",", lk));
 		
 	}
